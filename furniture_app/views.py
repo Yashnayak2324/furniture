@@ -5,8 +5,8 @@ from django.shortcuts import render
 def base(request):
     return render(request,'base.html')
 
-def checkout(requst):
-    return render(request,'checkout.htm')
+def checkout(request):
+    return render(request,'checkout.html')
 
 def contact(request):
     return render(request,'contact.html')
