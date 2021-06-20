@@ -1,0 +1,330 @@
+{% load static %}
+<html>
+    
+    <head>
+        <title>Base</title>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!-- Custom Theme files -->
+        <!--theme-style-->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all">	
+        <!--//theme-style-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design">
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!--fonts-->
+        <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css"><!--//fonts-->
+        <!-- start menu -->
+        <link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all">
+        <script type="text/javascript" src="{% static 'js/memenu.js' %}"></script>
+        <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+        <script src="{% static 'js/simpleCart.min.js' %}"> </script>
+    </head>
+    <body>
+
+        <!-- header -->
+
+
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="social">
+                        <ul>
+                            <li><a href="#"><i class="facebok"> </i></a></li>
+                            <li><a href="#"><i class="twiter"> </i></a></li>
+                            <li><a href="#"><i class="inst"> </i></a></li>
+                            <li><a href="#"><i class="goog"> </i></a></li>
+                                <div class="clearfix"></div>	
+                        </ul>
+                    </div>
+                    <div class="header-left">
+                    
+                        <div class="search-box">
+                            <div id="sb-search" class="sb-search">
+                                <form>
+                                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" id="search">
+                                    <input class="sb-search-submit" type="submit" value="">
+                                    <span class="sb-icon-search"> </span>
+                                </form>
+                            </div>
+                        </div>
+                    
+        <!-- search-scripts -->
+                            <script src="{% static 'js/classie.js' %}"></script>
+                            <script src="{% static 'js/uisearch.js' %}"></script>
+                                <script>
+                                    new UISearch( document.getElementById( 'sb-search' ) );
+                                </script>
+                            <!-- //search-scripts -->
+        
+                        <div class="ca-r">
+                            <div class="cart box_1">
+                                <a href="{% url 'checkout' %}">
+                                <h3> <div class="total">
+                                    <span class="simpleCart_total">$0.00</span> </div>
+                                    <img src="{% static 'images/cart.png' %}" alt=""></h3>
+                                </a>
+                                <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+        
+                            </div>
+                        </div>
+                            <div class="clearfix"> </div>
+                    </div>
+                        
+                </div>
+                </div>
+                <div class="container">
+                    <div class="head-top">
+                        <div class="logo">
+                            <h1><a href="{% url 'index' %}">Mattress</a></h1>
+                        </div>
+                  <div class=" h_menu4">
+                        <ul class="memenu skyblue"><li class="showhide" style="display: none;"><span class="title">MENU</span><span class="icon1"></span><span class="icon2"></span></li>
+                              <li style="display: inline;"><a class="color8" href="{% url 'index' %}">BED LINEN</a></li>	
+                              <li style="display: inline;"><a class="color1" href="#">CUSHIONS</a>
+                                  <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="{% url 'products' %}">Bedskirt</a></li>
+                                                <li><a href="{% url 'products' %}">Blanket/Throw</a></li>
+                                                <li><a href="{% url 'products' %}">Collection/Duvet</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter Set</a></li>
+                                                <li><a href="{% url 'products' %}">Decorative Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Pad </a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Topper</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow Protector</a></li>
+                                                
+                                            </ul>	
+                                        </div>							
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="{% url 'products' %}">Alpaca</a></li>
+                                                <li><a href="{% url 'products' %}">Cashmere</a></li>
+                                                <li><a href="{% url 'products' %}">Cotton</a></li>
+                                                <li><a href="{% url 'products' %}">Cotton Blend</a></li>
+                                                <li><a href="{% url 'products' %}">Down</a></li>
+                                                <li><a href="{% url 'products' %}">Down Alternative</a></li>
+                                                <li><a href="{% url 'products' %}">Egyptian Cotton</a></li>
+                                                <li><a href="{% url 'products' %}">Modal</a></li>
+                                                <li><a href="{% url 'products' %}">Pima Cotton</a></li>
+                                                <li><a href="{% url 'products' %}">Silk </a></li>
+                                                
+                                            </ul>	
+                                        </div>							
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="{% url 'products' %}">Bedskirt</a></li>
+                                                <li><a href="{% url 'products' %}">Blanket/Throw</a></li>
+                                                <li><a href="{% url 'products' %}">Collection/Duvet</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter Set</a></li>
+                                                <li><a href="{% url 'products' %}">Decorative Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Pad </a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Topper</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow Protector</a></li>
+                                            </ul>	
+                                        </div>												
+                                    </div>
+                                  </div>
+                                </div>
+                            </li>
+                            <li class="grid" style="display: inline;"><a class="color2" href="#">BEDSPREADS</a>
+                                  <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="{% url 'products' %}">Bedskirt</a></li>
+                                                <li><a href="{% url 'products' %}">Blanket/Throw</a></li>
+                                                <li><a href="{% url 'products' %}">Collection/Duvet</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter Set</a></li>
+                                                <li><a href="{% url 'products' %}">Decorative Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Pad </a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Topper</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow Protector</a></li>
+                                                
+                                            </ul>	
+                                        </div>								
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="{% url 'products' %}">Alpaca</a></li>
+                                                <li><a href="{% url 'products' %}">Cashmere</a></li>
+                                                <li><a href="{% url 'products' %}">Cotton</a></li>
+                                                <li><a href="{% url 'products' %}">Cotton Blend</a></li>
+                                                <li><a href="{% url 'products' %}">Down</a></li>
+                                                <li><a href="{% url 'products' %}">Down Alternative</a></li>
+                                                <li><a href="{% url 'products' %}">Egyptian Cotton</a></li>
+                                                <li><a href="{% url 'products' %}">Modal</a></li>
+                                                <li><a href="{% url 'products' %}">Pima Cotton</a></li>
+                                                <li><a href="{% url 'products' %}">Silk </a></li>
+                                                
+                                            </ul>		
+                                        </div>							
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            
+                                            <ul>
+                                                <li><a href="{% url 'products' %}">Bedskirt</a></li>
+                                                <li><a href="{% url 'products' %}"></a>Blanket/Throw</a></li>
+                                                <li><a href="{% url 'products' %}">Collection/Duvet</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter</a></li>
+                                                <li><a href="{% url 'products' %}">Comforter Set</a></li>
+                                                <li><a href="{% url 'products' %}">Decorative Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Pad </a></li>
+                                                <li><a href="{% url 'products' %}">Mattress Topper</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow</a></li>
+                                                <li><a href="{% url 'products' %}">Pillow Protector</a></li>
+                                            </ul>	
+                                        </div>												
+                                    </div>
+                                  </div>
+                                </div>
+                        </li>
+                        <li style="display: inline;"><a class="color4" href="{% url 'login' %}">Login</a></li>				
+                        <li style="display: inline;"><a class="color6" href="{% url 'contact' %}">Contact</a></li>
+                      </ul> 
+                    </div>
+                        
+                        <div class="clearfix"> </div>
+                </div>
+                </div>
+            </div>
+
+
+
+
+        <!-- banner -->
+
+        <div class="banner">
+            <div class="container">
+                  <script src="{% static 'js/responsiveslides.min.js' %}"></script>
+      <script>
+        $(function () {
+          $("#slider").responsiveSlides({
+              auto: true,
+              nav: true,
+              speed: 500,
+            namespace: "callbacks",
+            pager: true,
+          });
+        });
+      </script>
+                <div id="top" class="callbacks_container">
+                <ul class="rslides callbacks callbacks1" id="slider">
+                    <li id="callbacks1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out 0s;">
+                        
+                            <div class="banner-text">
+                                <h3>Lorem Ipsum is   </h3>
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+                            
+                            </div>
+                    
+                    </li>
+                    <li id="callbacks1_s1" class="" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; transition: opacity 500ms ease-in-out 0s;">
+                        
+                            <div class="banner-text">
+                                <h3>There are many  </h3>
+                            <p>Popular belief Contrary to , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+                                                    
+    
+                            </div>
+                        
+                    </li>
+                    <li id="callbacks1_s2" class="callbacks1_on" style="float: left; position: relative; opacity: 1; z-index: 2; display: list-item; transition: opacity 500ms ease-in-out 0s;">
+                            <div class="banner-text">
+                                <h3>Sed ut perspiciatis</h3>
+                            <p>Lorem Ipsum is not simply random text. Contrary to popular belief, It has roots in a piece of classical Latin literature from 45 BC.</p>
+                                    
+    
+                            </div>
+                        
+                    </li>
+                </ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3 callbacks_here"><a href="#" class="callbacks1_s3">3</a></li></ul>
+            </div>
+    
+        </div>
+        </div>
+
+
+
+
+
+        <!-- footer -->
+
+
+
+        <div class="footer">
+            <div class="container">
+        <div class="footer-top-at">
+        
+            <div class="col-md-3 amet-sed">
+            <h4>MORE INFO</h4>
+            <ul class="nav-bottom">
+                    <li><a href="#">How to order</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="{% url 'contact' %}">Location</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Membership</a></li>	
+                </ul>	
+            </div>
+            <div class="col-md-3 amet-sed">
+                <h4>CATEGORIES</h4>
+                <ul class="nav-bottom">
+                    <li><a href="#">Bed linen</a></li>
+                    <li><a href="#">Cushions</a></li>
+                    <li><a href="#">Duvets</a></li>
+                    <li><a href="#">Pillows</a></li>
+                    <li><a href="#">Protectors</a></li>	
+                </ul>
+                
+            </div>
+            <div class="col-md-3 amet-sed">
+                <h4>NEWSLETTER</h4>
+                <div class="stay">
+                    <div class="stay-left">
+                        <form>
+                            <input type="text" placeholder="Enter your email " required="">
+                        </form>
+                    </div>
+                    <div class="btn-1">
+                        <form>
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                        <div class="clearfix"> </div>
+        </div>
+                
+            </div>
+            <div class="col-md-3 amet-sed ">
+            <h4>CONTACT US</h4>
+                <p>Contrary to popular belief</p>
+                <p>The standard chunk</p>
+                <p>office :  +12 34 995 0792</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer-class">
+    <p>© 2015 Mattress . All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+    </div>
+    </div>
+    </body>
+</html>
