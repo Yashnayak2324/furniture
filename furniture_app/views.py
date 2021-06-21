@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def base(request):
-    return render(request,'base.html')
+    return render(request,'index.html')
 
 def checkout(request):
     return render(request,'checkout.html')
@@ -25,6 +25,7 @@ def register(request):
 
 def single(request):
     return render(request,'single.html')
+
 
 
 
