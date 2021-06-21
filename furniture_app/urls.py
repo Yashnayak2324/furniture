@@ -12,4 +12,5 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('single/',views.single,name='single'),
     path('otp_var/',views.otp_var,name='otp_var'),
+    path('logout/',views.logout,name='logout'),
 ]

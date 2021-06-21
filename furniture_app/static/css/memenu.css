@@ -142,5 +142,10 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 	background:#8ce78a;
 	color: #ffffff;
 }
+
+.skyblue li a.color5:hover{
+	background:red;
+	color:#ffffff;
+}
 	
 

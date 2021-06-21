@@ -115,7 +115,7 @@ a.item_add {
 /*start search*/
 .sb-search {
 	position: absolute;
-	right: 330px;
+	right: 380px;
 	width: 0%;
 	min-width: 41px;
 	margin: 0;
@@ -1706,10 +1706,10 @@ a.add-re:hover{
 a.create {
   text-decoration: none;
   color: #fff;
-  padding: 7px 20px;
-  background:#8ce78a;
-  text-align: center;
-  display: block;
+  padding: 12px 20px;
+  background:#2799f7;
+  /* text-align: center; */
+  /* display: block; */
  }
 .left-account img{
  	width:100%;

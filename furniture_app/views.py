@@ -25,11 +25,43 @@ def contact(request):
 def index(request):
     return render(request,'index.html')
 
-def login(request):
-    return render(request,'login.html')
-
 def products(request):
     return render(request,'products.html')
+
+
+def login(request):
+    if request.method == "POST":
+        vemail = request.POST['femail']
+        vpassword = request.POST['fpass']
+        try:
+            user = Register.objects.get(Email=vemail)
+
+            if user.Password == vpassword:
+                print(user.Password)
+                print(vpassword)
+                request.session['email'] = vemail
+                return render(request,'index.html')
+            else:
+                print("Password not Match.")
+                msg="Password Not Matched !!"
+                return render(request,'login.html',{'msg':msg})
+        except:
+            if vemail=="" or vpass=="":
+                msg="Please enter both fileds!"
+                return render(request,'login.html',{'msg':msg})
+            else:
+                msg="Email id is not registered !"
+                return render(request,'login.html',{'msg':msg})
+            
+    else:
+        return render(request,'login.html')
+
+def logout(request):
+    try:
+        del request.session['email']
+        return render(request,'login.html')
+    except:
+        return render(request,'login.html')
 
 def register(request):
     if request.method=="POST":
@@ -60,6 +92,7 @@ def register(request):
                 email_Subject = 'OTP  For Signup Verfication'
                 sendmail(email_Subject,'otpVerification_emailTemplate',vemail,{'name':'Dear User','otp':otp})
                 return render(request,'otp.html',{'gotp':otp,'email':vemail,'fname':vfname,'lname':vlname,'password':vpassword})
+    
     return render(request,'register.html')
 
 def otp_var(request):

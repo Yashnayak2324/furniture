@@ -198,7 +198,11 @@
                                   </div>
                                 </div>
                         </li>
-                        <li style="display: inline;"><a class="color4" href="{% url 'login' %}">Login</a></li>				
+                        {% if request.session.email %}
+                        <li style="display: inline;"><a class="color5" href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                        <li style="display: inline;"><a class="color4" href="{% url 'login' %}">Login</a></li>	
+                        {% endif %}			
                         <li style="display: inline;"><a class="color6" href="{% url 'contact' %}">Contact</a></li>
                       </ul> 
                     </div>
