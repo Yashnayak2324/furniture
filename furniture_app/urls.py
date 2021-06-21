@@ -11,4 +11,5 @@ urlpatterns = [
     path('products/',views.products,name='products'),
     path('register/',views.register,name='register'),
     path('single/',views.single,name='single'),
+    path('otp_var/',views.otp_var,name='otp_var'),
 ]

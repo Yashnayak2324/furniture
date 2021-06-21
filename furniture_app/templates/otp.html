@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+</head>
+<body>
+    	<!-- grow -->
+	<div class="grow">
+		<div class="container">
+			<h2>OTP Verfication</h2>
+		</div>
+	</div>
+	<!-- grow -->
+<!--content-->
+<form method="POST" action="{% url 'otp_var' %}">
+    {% csrf_token %}
+<div class="container">
+		<div class="account">
+		<div class="account-pass">
+		<div class="col-md-8 account-top">
+			<form>
+				
+			<div> 	
+				<span>OTP</span>
+				<input type="text" name='otp'> 
+			</div>
+            <div class="mx-auto" style="width: 200px;height: 30px;">
+                <input type="hidden" name="gotp" value="{{gotp}}">
+                <input type="hidden" name="email" value="{{email}}">
+                <input type="hidden" name="fname" value="{{fname}}">
+                <input type="hidden" name="lname" value="{{lname}}">
+                <input type="hidden" name="pass" value="{{password}}">
+            </div>
+
+				<input type="submit" value="Verify Otp"> 
+			</form>
+		</div>
+		
+	<div class="clearfix"> </div>
+	</div>
+</div>
+</form>
+
+</body>
+</html>
+{% endblock %}
