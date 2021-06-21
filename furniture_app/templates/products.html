@@ -5,8 +5,8 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 {% extends 'base.html' %}
-{% load staic %}
-{% blockcontent %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,11 +92,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-3 prod-rgt">
 				<div class=" pro-tp">
 					<div class="pl-lft">
-						<a href="{% url single' %}"><img class="img-responsive" src="{% staitc 'images/l2.jpg' %}" alt=""></a>
+						<a href="{% url 'single' %}"><img class="img-responsive" src="{% static 'images/l2.jpg' %}" alt=""></a>
 					</div>
+
 					<div class="pl-rgt">
 						<h6><a href="{% url 'single' %}">TRIBECA LIVING</a></h6>
-						<p><a href="{% url single' %}">450$</a></p>
+						<p><a href="{% url 'single' %}">450$</a></p>
 					</div>
 						<div class="clearfix"></div>
 				</div>
