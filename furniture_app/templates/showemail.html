@@ -1,0 +1,61 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!--header-->
+	<!-- grow -->
+	<div class="grow">
+		<div class="container">
+			<h2>Enter Email</h2>
+		</div>
+	</div>
+	<!-- grow -->
+<!--content-->
+{% if msg %}
+	{{msg}}
+{% endif %}
+<div class="container">
+		<div class="account">
+		<div class="account-pass">
+		<div class="col-md-8 account-top">
+			<form method="POST" action="{% url 'sendotp' %}">
+			{% csrf_token %}
+            <h1 class="page-title wow fadeInRight" data-wow-delay="300ms">
+                Forget Password
+             </h1>
+			<div> 	
+				<span>Email</span>
+				<input type="text" name="email"> 
+			</div>
+							
+				<input type="submit" value="Send OTP"> <br><br><br>
+
+			</form>
+			
+				
+			
+		</div>
+		
+			
+<div class="clearfix"> </div>
+		</div>
+	<div class="clearfix"> </div>
+	</div>
+	</div>
+
+</div>
+
+<!--//content-->
+</body>
+</html>
+{% endblock %}

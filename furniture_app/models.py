@@ -7,7 +7,7 @@ class Register(models.Model):
     Lname=models.CharField(max_length=50)
     Email=models.CharField(max_length=50)
     Password=models.CharField(max_length=50)
-
+    Phoneno=models.BigIntegerField(default=0)
     def __str__(self):
         return self.Fname + self.Lname
     

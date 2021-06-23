@@ -13,4 +13,9 @@ urlpatterns = [
     path('single/',views.single,name='single'),
     path('otp_var/',views.otp_var,name='otp_var'),
     path('logout/',views.logout,name='logout'),
+    path("showemail/",views.showemail,name="showemail"),
+    path("sendotp/",views.sendotp,name="sendotp"),
+    path("otp_forget_pw",views.otp_forget_pw,name="otp_forget_pw"),
+    path("forget_password/",views.forget_password,name="forget_password"),
+
 ]

@@ -68,6 +68,7 @@ def register(request):
         vfname=request.POST['fname']
         vlname=request.POST['lname']
         vemail=request.POST['email']
+        vphoneno=request.POST['phone']
         vpassword=request.POST['pass']
         vcpassword=request.POST['cpassword']
 
@@ -77,7 +78,7 @@ def register(request):
                 msg="This Email Id Already Registerd With Us"
                 return render(request,'register.html',{'msg':msg})
         except:
-            if vfname=="" or vlname=="" or vemail== "" or vpassword=="" or vcpassword=="":
+            if vfname=="" or vlname=="" or vemail== "" or vphoneno=="" or vpassword=="" or vcpassword=="":
                 msg="Plz Enter All Fileds"
                 return render(request,'register.html',{'msg':msg})
             elif vpassword!=vcpassword:
@@ -91,7 +92,7 @@ def register(request):
                 otp = randint(100000,999999)
                 email_Subject = 'OTP  For Signup Verfication'
                 sendmail(email_Subject,'otpVerification_emailTemplate',vemail,{'name':'Dear User','otp':otp})
-                return render(request,'otp.html',{'gotp':otp,'email':vemail,'fname':vfname,'lname':vlname,'password':vpassword})
+                return render(request,'otp.html',{'gotp':otp,'email':vemail,'fname':vfname,'phoneno':vpohneno,'lname':vlname,'password':vpassword})
     
     return render(request,'register.html')
 
@@ -101,6 +102,7 @@ def otp_var(request):
     vemail=request.POST['email']
     vfname=request.POST['fname']
     vlname=request.POST['lname']
+    vphoneno=request.POST['phone']
     vpassword=request.POST['pass']
 
     print("OTP : ",votp)
@@ -108,7 +110,7 @@ def otp_var(request):
     print("Email : ",vemail)
 
     if votp==vgotp:
-        register=Register.objects.create(Fname=vfname,Lname=vlname,Email=vemail,Password=vpassword)
+        register=Register.objects.create(Fname=vfname,Lname=vlname,Phoneno=vphoneno,Email=vemail,Password=vpassword)
         msg="OTP verified successfully."
         return render(request,'login.html',{'msg':msg})
     else:
@@ -120,6 +122,54 @@ def otp_var(request):
 
 def single(request):
     return render(request,'single.html')
+
+def showemail(request):
+    return render(request,'showemail.html')
+
+def sendotp(request):
+    vemail=request.POST['email']
+    register=Register.objects.filter(Email=vemail)
+    if register:
+        otp = randint(100000,999999)
+        email_Subject = "OTP For Forget Passwrod"
+        sendmail(email_Subject,'otpVerification_emailTemplate',vemail,{'name':'Dear User','otp':otp})
+
+        return render(request,"otp_forget_pw.html",{'gotp':otp,'email':vemail})
+    else:
+        msg="Enter valid Email Id" 
+        return render(request,"showemail.html",{'msg':msg})
+
+def otp_forget_pw(request):
+
+    vemail=request.POST['email']
+    vgotp=request.POST['gotp']
+    votp=request.POST['otp']
+    
+    if vgotp==votp:
+        return render(request,"forget_password.html",{'email':vemail})
+    else:
+        msg="Incorect OTP !"
+        return render(request,"otp_forget_pw.html",{'msg':msg,'email':vemail,'gotp':vgotp})
+
+def forget_password(request):
+
+    vemail=request.POST['email']
+    vpassword=request.POST['pass']
+    vcpassword=request.POST['cpass']
+    register=Register.objects.get(Email=vemail)
+    
+    if vpassword==vcpassword:
+        register.Password=vpassword
+        register.save()
+        
+        msg="Password changed successfully."
+        return render(request,"login.html",{'msg':msg})
+    else:
+        msg="Password does not match!"
+        return render(request,"forget_password.html",{'msg':msg,'email':vemail,'role':vrole})
+
+
+
 
 
 
