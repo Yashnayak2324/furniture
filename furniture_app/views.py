@@ -215,6 +215,36 @@ def change_password(request):
     else:
         return render(request,'change_password.html')
 
+def profile(request):
+    register=Register.objects.get(Email=request.session['email'])
+    if request.method=="POST":
+        register.Fname=request.POST['fname']
+        register.Lname=request.POST['lname']
+        register.Phoneno=request.POST['phone']
+        try:
+            # if request.FILES['pimage']:
+            #     register.Image=request.FILES['pimage']
+            #     register.save()
+            #     register.save()
+            #     del request.session['image']
+            #     request.session['image']=register.Image.url
+            del request.session['fname']
+            request.session['fname']=register.Fname
+            msg="Profile Updated Successfully."
+            return render(request,"profile.html",{'user':register,'msg':msg})
+        except:
+            register.save()
+            register.save()
+            del request.session['name']
+            request.session['name']=register.Fname
+            msg="Profile Updated Successfully."
+            return render(request,"profile.html",{'user':register,'msg':msg})
+    else:
+        return render(request,"profile.html",{'user':register})
+
+    
+
+
 
 
 
