@@ -166,9 +166,15 @@
 		</div>
 	</div>
     <div class="mx-auto" style="width: 200px;height: 30px;">
-
+       
     </div>
     <form method="POST" action="{% url 'profile' %}" enctype="multipart/form-data">
+        <p style="text-align:center">
+            {% if msg %}
+         {{msg}}
+        {% endif %}
+        </p>
+        
         {% csrf_token %}
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
@@ -199,14 +205,13 @@
                         <div class="col-md-12"><label class="labels">Last Name</label><input type="text" class="form-control" placeholder="Last name" value="{{user.Lname}}" name="lname"></div>
                        
                         <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="Email ID" value="{{user.Email}}" name="email" readonly></div>
+                        <div class="col-md-12"><label class="labels">Phone</label><input type="text" class="form-control" placeholder="Phone Number" value="{{user.Phoneno}}" name="phone" pattern="^[0-9]+" title="First Name Should Contain Only Digit"></div>
+                    
+                        <div class="col-md-12"><label class="labels">Address</label><input type="textarea" class="form-control" placeholder="Full Address" value="{{user.Add}}" name="address"></div>
+              
+                    </div>                    
+
                     </div>
-
-                    
-
-                    <div class="col-md-12"><label class="labels">Phone</label><input type="text" class="form-control" placeholder="Phone Number" value="{{user.Phoneno}}" name="phone" pattern="^[0-9]+" title="First Name Should Contain Only Digit"></div>
-                    
-                    <div class="col-md-12"><label class="labels">Address</label><input type="textarea" class="form-control" placeholder="Full Address" value="{{p_user.Address}}" name="address"></div>
-                </div>
                 </div>
             </div>
             <center>
@@ -224,17 +229,7 @@
     <div class="mx-auto" style="width: 200px;height: 30px;">
 
     </div>
-                        {% if msg %}
-							{% ifequal msg 'Profile Updated Successfully.' %}
-							<script>
-								Swal.fire(
-								  '',
-								  '{{msg}}',
-								  'success'
-								)
-							  </script>
-							  {% endifequal %}
-                    	{% endif %}
+                        
 
 </body>
 

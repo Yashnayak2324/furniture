@@ -221,6 +221,8 @@ def profile(request):
         register.Fname=request.POST['fname']
         register.Lname=request.POST['lname']
         register.Phoneno=request.POST['phone']
+        register.Add=request.POST['address']
+        
         try:
             # if request.FILES['pimage']:
             #     register.Image=request.FILES['pimage']
@@ -229,14 +231,20 @@ def profile(request):
             #     del request.session['image']
             #     request.session['image']=register.Image.url
             del request.session['fname']
+            del request.session['lname']
             request.session['fname']=register.Fname
+            request.session['lname']=register.Lname
+            register.save()
             msg="Profile Updated Successfully."
+            print("1")
             return render(request,"profile.html",{'user':register,'msg':msg})
         except:
             register.save()
-            register.save()
-            del request.session['name']
-            request.session['name']=register.Fname
+            del request.session['fname']
+            del request.session['lname']
+            request.session['fname']=register.Fname
+            request.session['lname']=register.Lname
+            print("2")
             msg="Profile Updated Successfully."
             return render(request,"profile.html",{'user':register,'msg':msg})
     else:
