@@ -84,63 +84,7 @@
                         </div>
                   <div class=" h_menu4">
                         <ul class="memenu skyblue"><li class="showhide" style="display: none;"><span class="title">MENU</span><span class="icon1"></span><span class="icon2"></span></li>
-                              <li style="display: inline;"><a class="color8" href="{% url 'index' %}">BED LINEN</a></li>	
-                              <li style="display: inline;"><a class="color1" href="#">CUSHIONS</a>
-                                  <div class="mepanel">
-                                <div class="row">
-                                    <div class="col1">
-                                        <div class="h_nav">
-                                            <ul>
-                                                <li><a href="{% url 'products' %}">Bedskirt</a></li>
-                                                <li><a href="{% url 'products' %}">Blanket/Throw</a></li>
-                                                <li><a href="{% url 'products' %}">Collection/Duvet</a></li>
-                                                <li><a href="{% url 'products' %}">Comforter</a></li>
-                                                <li><a href="{% url 'products' %}">Comforter Set</a></li>
-                                                <li><a href="{% url 'products' %}">Decorative Pillow</a></li>
-                                                <li><a href="{% url 'products' %}">Mattress Pad </a></li>
-                                                <li><a href="{% url 'products' %}">Mattress Topper</a></li>
-                                                <li><a href="{% url 'products' %}">Pillow</a></li>
-                                                <li><a href="{% url 'products' %}">Pillow Protector</a></li>
-                                                
-                                            </ul>	
-                                        </div>							
-                                    </div>
-                                    <div class="col1">
-                                        <div class="h_nav">
-                                            <ul>
-                                                <li><a href="{% url 'products' %}">Alpaca</a></li>
-                                                <li><a href="{% url 'products' %}">Cashmere</a></li>
-                                                <li><a href="{% url 'products' %}">Cotton</a></li>
-                                                <li><a href="{% url 'products' %}">Cotton Blend</a></li>
-                                                <li><a href="{% url 'products' %}">Down</a></li>
-                                                <li><a href="{% url 'products' %}">Down Alternative</a></li>
-                                                <li><a href="{% url 'products' %}">Egyptian Cotton</a></li>
-                                                <li><a href="{% url 'products' %}">Modal</a></li>
-                                                <li><a href="{% url 'products' %}">Pima Cotton</a></li>
-                                                <li><a href="{% url 'products' %}">Silk </a></li>
-                                                
-                                            </ul>	
-                                        </div>							
-                                    </div>
-                                    <div class="col1">
-                                        <div class="h_nav">
-                                            <ul>
-                                                <li><a href="{% url 'products' %}">Bedskirt</a></li>
-                                                <li><a href="{% url 'products' %}">Blanket/Throw</a></li>
-                                                <li><a href="{% url 'products' %}">Collection/Duvet</a></li>
-                                                <li><a href="{% url 'products' %}">Comforter</a></li>
-                                                <li><a href="{% url 'products' %}">Comforter Set</a></li>
-                                                <li><a href="{% url 'products' %}">Decorative Pillow</a></li>
-                                                <li><a href="{% url 'products' %}">Mattress Pad </a></li>
-                                                <li><a href="{% url 'products' %}">Mattress Topper</a></li>
-                                                <li><a href="{% url 'products' %}">Pillow</a></li>
-                                                <li><a href="{% url 'products' %}">Pillow Protector</a></li>
-                                            </ul>	
-                                        </div>												
-                                    </div>
-                                  </div>
-                                </div>
-                            </li>
+                              
                             <li class="grid" style="display: inline;"><a class="color2" href="#">BEDSPREADS</a>
                                   <div class="mepanel">
                                 <div class="row">
@@ -198,13 +142,19 @@
                                   </div>
                                 </div>
                         </li>
+                        <li style="display: inline;"><a class="color6" href="{% url 'contact' %}">Contact</a></li>
                         {% if request.session.email %}
-                        <li style="display: inline;"><a class="color5" href="{% url 'logout' %}">Logout</a></li>
+                        <li style="display: inline;"><a href="#">Welcome {{request.session.fname}}  {{request.session.lname}}</a>
+                        </li>
+                        <li style="display: inline;"><a class="color6" href="{% url 'change_password' %}">Change Password</a></li>
+                        <li style="display: inline;"><a class="color6" href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                         <li style="display: inline;"><a class="color4" href="{% url 'login' %}">Login</a></li>	
                         {% endif %}			
-                        <li style="display: inline;"><a class="color6" href="{% url 'contact' %}">Contact</a></li>
                       </ul> 
+                      
+                    </div>
+                </div>
                     </div>
                         
                         <div class="clearfix"> </div>

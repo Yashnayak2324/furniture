@@ -1,5 +1,5 @@
 from furniture_app.models import Register
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from django.core.mail import send_mail
 from random import *
@@ -34,19 +34,22 @@ def login(request):
         vemail = request.POST['femail']
         vpassword = request.POST['fpass']
         try:
-            user = Register.objects.get(Email=vemail)
+            register = Register.objects.get(Email=vemail)
 
-            if user.Password == vpassword:
-                print(user.Password)
+            if register.Password == vpassword:
+                print(register.Password)
                 print(vpassword)
                 request.session['email'] = vemail
+                request.session['fname']=register.Fname
+                request.session['lname']=register.Lname
+                request.session['vpassword']=vpassword
                 return render(request,'index.html')
             else:
                 print("Password not Match.")
                 msg="Password Not Matched !!"
                 return render(request,'login.html',{'msg':msg})
         except:
-            if vemail=="" or vpass=="":
+            if vemail=="" or vpassword=="":
                 msg="Please enter both fileds!"
                 return render(request,'login.html',{'msg':msg})
             else:
@@ -168,8 +171,49 @@ def forget_password(request):
         msg="Password does not match!"
         return render(request,"forget_password.html",{'msg':msg,'email':vemail,'role':vrole})
 
+def change_password(request):
+    register = Register.objects.get(Email=request.session['email'])
 
+    if request.method=="POST":
+        v_old_pass=request.POST['fopass']
+        v_new_pass=request.POST['fnpass']
+        v_new_confirm_pass=request.POST['fcnpass']
 
+        password=register.Password
+        print("---->",password)
+        
+        if v_old_pass!=register.Password:
+            msg="Old Password Is Incorrect"
+            return render(request,'change_password.html',{'msg':msg})
+
+        elif v_old_pass==v_new_pass:
+            msg="Please Enter Different Password"
+            return render(request,'change_password.html',{'msg':msg})
+
+        elif v_new_pass==v_new_confirm_pass:
+            register.Password=v_new_pass
+            register.save()
+            return redirect('logout')
+        else:
+            msg="New Password And Confirm Password Is Not Matched"
+            return render(request,'change_password.html',{'msg':msg})
+
+        # if not match_pass:
+        #     msg="Old Password Is Incorrect"
+        #     return render(request,'change_password.html',{'msg':msg})
+        # elif same_pass:
+        #     msg="Please Enter Different Password"
+        #     return render(request,'change_password.html',{'msg':msg})
+        # elif v_new_pass==v_new_confirm_pass:
+        #     user.Password = make_password(v_new_pass) 
+        #     user.save()
+        #     return redirect('logout')
+        # else:
+        #     msg="New Password And Confirm Password Is Not Matched"
+        #     return render(request,'change_password.html',{'msg':msg})
+
+    else:
+        return render(request,'change_password.html')
 
 
 

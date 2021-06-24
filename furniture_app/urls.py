@@ -17,5 +17,5 @@ urlpatterns = [
     path("sendotp/",views.sendotp,name="sendotp"),
     path("otp_forget_pw",views.otp_forget_pw,name="otp_forget_pw"),
     path("forget_password/",views.forget_password,name="forget_password"),
-
+    path('change_password/',views.change_password,name='change_password')
 ]
