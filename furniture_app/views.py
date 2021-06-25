@@ -74,6 +74,7 @@ def register(request):
         vphoneno=request.POST['phone']
         vpassword=request.POST['pass']
         vcpassword=request.POST['cpassword']
+        vimage=request.FILES.getlist('image')
 
         try:
             reg = Register.objects.get(Email=vemail)
@@ -95,7 +96,7 @@ def register(request):
                 otp = randint(100000,999999)
                 email_Subject = 'OTP  For Signup Verfication'
                 sendmail(email_Subject,'otpVerification_emailTemplate',vemail,{'name':'Dear User','otp':otp})
-                return render(request,'otp.html',{'gotp':otp,'email':vemail,'fname':vfname,'phoneno':vpohneno,'lname':vlname,'password':vpassword})
+                return render(request,'otp.html',{'gotp':otp,'email':vemail,'fname':vfname,'phoneno':vphoneno,'lname':vlname,'password':vpassword,'image':vimage})
     
     return render(request,'register.html')
 
@@ -105,20 +106,21 @@ def otp_var(request):
     vemail=request.POST['email']
     vfname=request.POST['fname']
     vlname=request.POST['lname']
-    vphoneno=request.POST['phone']
+    vphoneno=request.POST.get('phone')
     vpassword=request.POST['pass']
+    vimage=request.POST['image']
 
     print("OTP : ",votp)
     print("GOTP : ",vgotp)
     print("Email : ",vemail)
 
     if votp==vgotp:
-        register=Register.objects.create(Fname=vfname,Lname=vlname,Phoneno=vphoneno,Email=vemail,Password=vpassword)
+        register=Register.objects.create(Fname=vfname,Lname=vlname,Phoneno=vphoneno,Email=vemail,Password=vpassword,Image=vimage)
         msg="OTP verified successfully."
         return render(request,'login.html',{'msg':msg})
     else:
         msg="Please enter correct otp!"
-        return render(request,'otp.html',{'msg':msg,'gotp':vgotp,'email':vemail,'fname':vfname,'lname':vlname,'password':vpassword})
+        return render(request,'otp.html',{'msg':msg,'gotp':vgotp,'email':vemail,'fname':vfname,'lname':vlname,'password':vpassword,'image':vimage})
 
 
 
@@ -224,12 +226,12 @@ def profile(request):
         register.Add=request.POST['address']
         
         try:
-            # if request.FILES['pimage']:
-            #     register.Image=request.FILES['pimage']
-            #     register.save()
-            #     register.save()
-            #     del request.session['image']
-            #     request.session['image']=register.Image.url
+            if request.FILES['pimage']:
+                register.Image=request.FILES['pimage']
+                register.save()
+                register.save()
+                del request.session['image']
+                request.session['image']=register.Image.url
             del request.session['fname']
             del request.session['lname']
             request.session['fname']=register.Fname
