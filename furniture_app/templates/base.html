@@ -147,7 +147,7 @@
                         
                         <li style="display: inline;"><a class="color6" href="{% url 'change_password' %}">Change Password</a></li>
                         <li style="display: inline;"><a class="color5" href="{% url 'logout' %}">Logout</a></li>
-                        <li style="display: inline;"><a href="{% url 'profile' %}"><img src="#" style="height: 20px;width: 20px;border-radius: 50%;">{{request.session.fname}}  {{request.session.lname}}</a></li>
+                        <li style="display: inline;"><a href="{% url 'profile' %}"><img src="{{request.session.image}}" style="height: 20px;width: 20px;border-radius: 50%;">{{request.session.fname}}  {{request.session.lname}}</a></li>
                                                 
 
 

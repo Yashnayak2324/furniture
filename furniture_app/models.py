@@ -9,7 +9,7 @@ class Register(models.Model):
     Password=models.CharField(max_length=50)
     Phoneno=models.BigIntegerField(default=0)
     Add= models.CharField(max_length=50,default='')
-    Image=models.ImageField(upload_to='images/',default='')
+    Image=models.ImageField(upload_to='images/',default='avtar.png')
     def __str__(self):
-        return self.Fname + self.Lname
+        return self.Fname + " " + self.Lname
     

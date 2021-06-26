@@ -35,14 +35,13 @@ def login(request):
         vpassword = request.POST['fpass']
         try:
             register = Register.objects.get(Email=vemail)
-
             if register.Password == vpassword:
                 print(register.Password)
                 print(vpassword)
                 request.session['email'] = vemail
                 request.session['fname']=register.Fname
                 request.session['lname']=register.Lname
-                request.session['vpassword']=vpassword
+                request.session['image']=register.Image.url
                 return render(request,'index.html')
             else:
                 print("Password not Match.")
@@ -62,6 +61,8 @@ def login(request):
 def logout(request):
     try:
         del request.session['email']
+        del request.session['fname']
+        del request.session['lname']
         return render(request,'login.html')
     except:
         return render(request,'login.html')
@@ -74,8 +75,10 @@ def register(request):
         vphoneno=request.POST['phone']
         vpassword=request.POST['pass']
         vcpassword=request.POST['cpassword']
-        vimage=request.FILES.getlist('image')
-
+        try:
+            vimage=request.FILES['image']
+        except:
+            vimage="avtar.png"
         try:
             reg = Register.objects.get(Email=vemail)
             if reg:
@@ -108,7 +111,11 @@ def otp_var(request):
     vlname=request.POST['lname']
     vphoneno=request.POST.get('phone')
     vpassword=request.POST['pass']
-    vimage=request.POST['image']
+    
+    try:
+        vimage=request.FILES['image']
+    except:
+        vimage="avtar.png"
 
     print("OTP : ",votp)
     print("GOTP : ",vgotp)
@@ -121,9 +128,6 @@ def otp_var(request):
     else:
         msg="Please enter correct otp!"
         return render(request,'otp.html',{'msg':msg,'gotp':vgotp,'email':vemail,'fname':vfname,'lname':vlname,'password':vpassword,'image':vimage})
-
-
-
 
 def single(request):
     return render(request,'single.html')
@@ -231,7 +235,9 @@ def profile(request):
                 register.save()
                 register.save()
                 del request.session['image']
+                print(request.session['image'])
                 request.session['image']=register.Image.url
+
             del request.session['fname']
             del request.session['lname']
             request.session['fname']=register.Fname
