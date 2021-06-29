@@ -233,15 +233,13 @@ def profile(request):
             if request.FILES['pimage']:
                 register.Image=request.FILES['pimage']
                 register.save()
-                register.save()
-                del request.session['image']
-                print(request.session['image'])
-                request.session['image']=register.Image.url
 
             del request.session['fname']
             del request.session['lname']
+            del request.session['image']
             request.session['fname']=register.Fname
             request.session['lname']=register.Lname
+            request.session['image']=register.Image.url
             register.save()
             msg="Profile Updated Successfully."
             print("1")
@@ -257,6 +255,8 @@ def profile(request):
             return render(request,"profile.html",{'user':register,'msg':msg})
     else:
         return render(request,"profile.html",{'user':register})
+
+    
 
     
 
