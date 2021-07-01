@@ -13,3 +13,11 @@ class Register(models.Model):
     def __str__(self):
         return self.Fname + " " + self.Lname
     
+class Contact(models.Model):
+    Name=models.CharField(max_length=50)
+    Email=models.EmailField(max_length=50)
+    Subject=models.CharField(max_length=50)
+    Message=models.TextField()
+
+    def __str__(self):
+        return self.Name

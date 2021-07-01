@@ -27,15 +27,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="contact-form">
 				
 				<div class="col-md-8 contact-grid">
-					<form>	
-						<input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+					<form method="post" action="{% url 'contact' %}">	
+						{% csrf_token  %}
+						{% if msg %}
+						{{msg}}
+					    {% endif %}
+						<input type="text" name='name' value="Name"  onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 					
-						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-						<input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+						<input type="text" name='email' value="Email"  onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
 						
-						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+						<input type="text" name='subject' value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+						
+						<textarea cols="77" rows="6" name='message' value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
 						<div class="send">
-							<input type="submit" value="Send">
+							<input type="submit" value="Submit">
 						</div>
 					</form>
 				</div>

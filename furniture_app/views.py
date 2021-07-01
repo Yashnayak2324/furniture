@@ -1,5 +1,5 @@
 from furniture_app.models import Register
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, resolve_url
 from .models import *
 from django.core.mail import send_mail
 from random import *
@@ -264,8 +264,21 @@ def profile(request):
         return render(request,"profile.html",{'user':register})
 
     
-def pages(request):
-    return render(request,"pages.html")
+def pvc_furniture(request):
+    return render(request,"pvc_furniture.html")
+
+def contact(request):
+    if request.method=="POST":
+        vname=request.POST['name']
+        vemail=request.POST['email']
+        vsubject=request.POST['subject']
+        vmessage=request.POST['message']
+
+        Contact.objects.create(Name=vname,Email=vemail,Subject=vsubject,Message=vmessage)
+        msg="Contact Saved Successfully"
+        return render(request,'contact.html',{'msg':msg})
+    else:
+        return render(request,'contact.html')
 
 
 
