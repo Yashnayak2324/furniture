@@ -19,4 +19,5 @@ urlpatterns = [
     path("forget_password/",views.forget_password,name="forget_password"),
     path('change_password/',views.change_password,name='change_password'),
     path('profile/',views.profile,name='profile'),
+    path('pages/',views.pages,name='pages'),
 ]

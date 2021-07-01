@@ -178,7 +178,7 @@
         {% csrf_token %}
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
-                <div class="col-md-3 border-right">
+                <div class="col-md-3 border-right account">
                     <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                         <div class="card-wrapper">
                            <div class="card">
@@ -199,8 +199,8 @@
             
 
             <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="row mt-2">
+                <div class="account">
+                    <div class="row mt-2 account-pass">
                         <div class="col-md-12"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="First name" value="{{user.Fname}}" name="fname"></div>
                         <div class="col-md-12"><label class="labels">Last Name</label><input type="text" class="form-control" placeholder="Last name" value="{{user.Lname}}" name="lname"></div>
                        
@@ -215,11 +215,10 @@
                 </div>
             </div>
             <center>
-            <div class="container-login100-form-btn" style="width: 200px;">
-                <div class="mx-auto" style="width: 200px;height: 30px;"></div>            
-                <button class="login100-form-btn">
-                    Save Profile
-                </button>
+            <div class="account-top input">            
+                    
+				<input type="submit" value="Save Profile"> <br><br><br>
+                
             </div>
             
             </center> 

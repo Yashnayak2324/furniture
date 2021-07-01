@@ -77,8 +77,11 @@ def register(request):
         vcpassword=request.POST['cpassword']
         try:
             vimage=request.FILES['image']
-        except:
+            print("1")
+        except Exception as e:
             vimage="avtar.png"
+            print(e)
+        
         try:
             reg = Register.objects.get(Email=vemail)
             if reg:
@@ -112,11 +115,15 @@ def otp_var(request):
     vphoneno=request.POST.get('phone')
     vpassword=request.POST['pass']
     
+    
     try:
         vimage=request.FILES['image']
+        print(vimage)
     except:
         vimage="avtar.png"
 
+
+    print(vimage)
     print("OTP : ",votp)
     print("GOTP : ",vgotp)
     print("Email : ",vemail)
@@ -257,8 +264,8 @@ def profile(request):
         return render(request,"profile.html",{'user':register})
 
     
-
-    
+def pages(request):
+    return render(request,"pages.html")
 
 
 
