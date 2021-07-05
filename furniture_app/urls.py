@@ -21,4 +21,7 @@ urlpatterns = [
     path('profile/',views.profile,name='profile'),
     path('pvc_furniture/',views.pvc_furniture,name='pvc_furniture'),
     path('contact/',views.contact,name='contact'),
+    path('kitchen_cabiinet/',views.kitchen_cabiinet,name='kitchen_cabiinet'),
+    path('warddrobe/',views.warddrobe,name='warddrobe'),
+
 ]
