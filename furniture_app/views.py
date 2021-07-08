@@ -265,10 +265,11 @@ def profile(request):
 
     
 def pvc_furniture(request):
-    return render(request,"pvc_furniture.html")
+    return render(request,"pvc_furniture.html",)
 
 def kitchen_cabiinet(request):
-    return render(request,"pvc furniture/kitchen_cabiinet.html")
+    img=Images.objects.all()
+    return render(request,"pvc furniture/kitchen_cabiinet.html",{'img':img})
 
 def warddrobe(request):
     return render(request,"pvc furniture/warddrobe.html")
@@ -285,6 +286,8 @@ def contact(request):
         return render(request,'contact.html',{'msg':msg})
     else:
         return render(request,'contact.html')
+
+
 
 
 

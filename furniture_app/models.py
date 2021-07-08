@@ -21,3 +21,8 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.Name
+
+class Images(models.Model):
+    Kitchen_Image=models.ImageField(upload_to='images/',default="")
+
+    

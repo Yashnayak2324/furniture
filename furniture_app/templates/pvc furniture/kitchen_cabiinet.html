@@ -275,20 +275,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="content-top">
 				
 				<h1>Kitchen Images</h1>
+				{% for i in img %}
 				<div class="row text-center text-lg-left">
 
 					<div class="col-lg-3 col-md-4 col-6">
 					  <a href="#" class="d-block mb-4 h-100">
-						<img id="myImg" src="{% static 'images/kitchen2.jpg' %}" alt="Snow" style="width:100%;max-width:300px">
+						<img id="myImg" src="{{i.Kitchen_Image.url}}" alt="Snow" style="width:100%;max-width:300px">
 
 					  </a>
 					</div>
-
+					
 					<div id="myModal" class="modal">
 						<span class="close">&times;</span>
 						<img class="modal-content" id="img01">
 						<div id="caption"></div>
 					</div>
+
+					
 					  
 				<script>
 					  // Get the modal
@@ -312,6 +315,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						modal.style.display = "none";
 					  }
 				</script>
+				{% endfor %}
 					
 					
 				</div>
