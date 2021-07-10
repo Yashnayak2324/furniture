@@ -1,0 +1,326 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+        .card-wrapper {
+        width: 230px;
+        height: 280px;
+        position: relative;
+        }
+
+        .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 230px;
+        height: 280px;
+        transform: translate(-50%, -50%);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+        transition: 0.5s;
+        }
+        .card .card-image {
+        position: absolute;
+        z-index: 2;
+        background-color: #000;
+        transition: 0.5s;
+        }
+        .card:hover img {
+        opacity: 0.4;
+        transition: 0.5s;
+        }
+
+        .card:hover .card-image {
+        transform: translateY(-100px);
+        transition: all 0.9s;
+        }
+
+        /**** Personal Details ****/
+        .details::-webkit-file-upload-button{
+        visibility :hidden;
+        }
+
+        .details::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        height: 90px;
+        z-index: 1;
+        padding :15px 90px;
+        content :'\f030';
+        font-family: fontAwesome;
+        font-size :50px;
+        color : black;
+        display :inline-block;
+        -webkit-user-select:none;
+        cursor :pointer;
+        }
+
+        
+        .details h2 {
+        margin: 30px 0;
+        padding: 0;
+        text-align: center;
+        }
+
+        .details h2 .job-title {
+        font-size: 1rem;
+        line-height: 2.5rem;
+        color: #333;
+        font-weight: 300;
+        }
+
+        .jane {
+        content:'\f030';
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        opacity: 0;
+        background: #fff;
+        width: 100%;
+        height: 100px;
+        z-index: 3;
+        padding: 10px;
+        transition: 0.4s;
+        }
+
+
+        .card:hover .jane {
+        bottom: 0;
+        left: 0;
+        transition-delay: 0.5s;
+        opacity: 1;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+<!--header-->
+<!-- products -->
+	<!-- grow -->
+	<div class="grow">
+		<div class="container"> 
+			<h2>kitchen Cabiinet</h2>
+		</div>
+	</div>
+	<div class="content-top">
+		
+	<center><h1 style=" font-style: italic; font-size: 250%;">kitchen Products</h1></center>
+	<!-- grow -->
+	</div>
+	<div class="pro-du">
+		<div class="container">
+			<div class="col-md-9 product1">
+				<div class=" bottom-product">
+					<div class="col-md-6 bottom-cd simpleCart_shelfItem">
+						
+						<center><b><table border="4%" style="font-size: 15px; height: 70%; width: 70%;  ">
+							<tr>
+								<th style="text-align: center; color: FFFFFF;  background-color: #8ce78a;" >PRODUCTS</th>
+							</tr>
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'kitchen_cabinet' %}">KITCHENCABINET</a></th>
+							</tr>
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'wardrobe' %}">WARDROBE</a></th>
+							</tr>
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'tvcabinet' %}">TV CABINET</a></th>
+							</tr>
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'pvc_door' %}">PVC DOORS</a></th>
+							</tr>	
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'ceiling' %}">DESIGNER CEILLING</a></th>
+							</tr>
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'wall_panelling' %}">WALL PANELLING</a></th>
+							</tr>
+							<tr>
+								<th style="text-align: center;" ><a href="{% url 'upvc_window' %}" %}">UPVC WINDOW</a></th>
+							</tr>
+							<tr>
+								<th style="text-align: center;"><a href="{% url 'partition' %}">PVC PARTITION</a></th>
+							</tr>
+						</table>
+					</b>
+				</center>
+				<br>
+					<div class="ca-rt">
+												 
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					
+							<b><p style="font-size: 15px; padding-top: 10%; margin-right: 10%;">
+							Pioneers in the industry, we offer modular pvc kitchen cabinet, customize kitchen cabinet, designer kitchen cabinet, laminated kitchen cabinet, modular kitchen cabinet and pvc kitchen cabinet from India. We have in our stores an exquisite collection of Pvc kitchen cabinet, which is designed and developed with a perfect fusion of contemporary and conventional styles and patterns. High on aesthetics and utility, the range is widely appreciated for its optimum space utilization that eases the user in cooking and doing other kitchen works. Made with utmost precision, the range can also be offered in customized designs to meet the specific preferences of the clients.
+							<br><br><br><br><br><br><br><br><br><br><br><br>
+							
+							
+							<h1 style=" background-color: #8ce78a; color:  ffffff; font-size: 300% ; padding-right: 60%; text-align: center;">Features :</h1>
+							<div class="col-md-12 product1">
+								<!-- <a class="continue" href="#">Continue to basket</a> -->
+								<div class="price-details">
+												 
+								</div>	
+								<ul style="padding-left: 10%; background-color: lightgray; font-size: 200%;">
+								  <!-- <li class="last_price"> <h4></h4></li>	 -->
+								  <li style="padding-left: 10%; font-size: 60%;"><span>WaterProof</span></li>
+								  <div class="clearfix"> </div>
+								</ul>
+								<ul style="padding-left: 10%; background-color: lightgray;font-size: 200%;">
+									<!-- <li class="last_price"> <h4></h4></li>	 -->
+									<li style="padding-left: 10%; font-size: 60%;"><span>TermiteProofe</span></li>
+									<div class="clearfix"> </div>
+								  </ul>
+								  
+								  <ul style="padding-left: 10%; background-color: lightgray; font-size: 200%;">
+									<!-- <li class="last_price"> <h4></h4></li>	 -->
+									<li style="padding-left: 10%; font-size: 60%;"><span>Fire Retardant</span></li>
+									<div class="clearfix"> </div>
+								  </ul>
+								  <ul style="padding-left: 10%; background-color: lightgray;font-size: 200%;">
+									<!-- <li class="last_price"> <h4></h4></li>	 -->
+									<li style="padding-left: 10%;font-size: 60%;"><span>Economical Maintanace Free</span></li>
+									<div class="clearfix"> </div>
+								  </ul>
+								  <ul style="padding-left: 10%; background-color: lightgray;font-size: 200%;">
+									<!-- <li class="last_price"> <h4></h4></li>	 -->
+									<li style="padding-left: 10%; font-size: 60%;"><span>Environment Friendly</span></li>
+									<div class="clearfix"> </div>
+								  </ul>
+							<ul style="padding-left: 10%; background-color: lightgray;font-size: 200%;">
+								<!-- <li class="last_price"> <h4></h4></li>	 -->
+								<li style="padding-left: 10%; font-size: 60%;"><span>Environment Friendly</span></li>
+								<div class="clearfix"> </div>
+							  </ul>
+							  <ul style="padding-left: 10%;  background-color: lightgray; font-size: 200%;">
+								<!-- <li class="last_price"> <h4></h4></li>	 -->
+								<li style="padding-left: 10%; font-size: 60%;"><span>Fast Installation</span></li>
+								<div class="clearfix"> </div>
+							  </ul>
+							  <ul style="padding-left: 10%; background-color: lightgray;font-size: 200%;">
+								<!-- <li class="last_price"> <h4></h4></li>	 -->
+								<li style="padding-left: 10%; font-size: 60%;"><span>Light Weight</span></li>
+								<div class="clearfix"> </div>
+							  </ul>
+							  <ul style="padding-left: 10%; background-color: lightgray; font-size: 200%;">
+								<!-- <li class="last_price"> <h4></h4></li>	 -->
+								<li style="padding-left: 10%; font-size: 60%;"><span>No Need To Paint</span></li>
+								<div class="clearfix"> </div>
+							  </ul>
+							  <ul style="padding-left: 10%; background-color: lightgray; font-size: 200%;">
+								<!-- <li class="last_price"> <h4></h4></li>	 -->
+								<li style="padding-left: 10%; font-size: 60%;"><span>Wide Range Of Colors</span></li>
+								<div class="clearfix"> </div>
+							  </ul>
+						</div>
+						</p>
+					</b>
+				<br>
+				</div>
+				</div>		
+				
+				
+			<div class="col-md-3 prod-rgt">
+				
+				<div class=" pro-tp">
+					<div class="product-at ">
+						<a href="{% url 'single' %}"><img class="img-responsive" src="{% static 'images/kitchen2.jpg' %}" alt="" style="width: 250% ;height: 70%;">
+						<div class="pro-grid">
+									
+						</div>
+					</a>	
+					</div>
+					<br>
+					
+								
+					
+				</div>
+				<div class=" pro-tp">
+					<div class="pl-lft">
+<!-- 						
+						<a href="{% url 'single' %}"><img class="img-responsive" src="{% static 'images/l1.jpg' %}" alt=""></a> -->
+					</div>
+					<div class="pl-rgt">
+						<!-- <h6><a href="{% url 'single' %}">TRIBECA LIVING</a></h6>
+						<p><a href="{% url 'single' %}">450$</a></p> -->
+					</div>
+						<div class="clearfix"></div>
+				</div>
+				<div class="pr-btm">
+				<!-- <h4>What Our Client Say</h4>
+					<img class="img-responsive" src="{% static 'images/pi.jpg' %}" alt="">
+					<h6>John</h6>
+					<p>Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p> -->\
+					
+				</div>
+				
+			</div>
+			
+				<div class="clearfix"></div>
+			
+				
+			</div>
+			
+			<div class="contact">
+			
+				<div class="container">
+				<!-- <div class="contact-form"> -->
+			
+			<div class="content-top">
+				
+				<h1>Kitchen Images</h1>
+				{% for i in img %}
+				<div class="row text-center text-lg-left">
+
+					<div class="col-lg-3 col-md-4 col-6">
+						<div class="d-flex flex-column align-items-center text-center p-3 py-5">
+							<div class="card-wrapper">
+							   <div class="card">
+					  <a class="preview lightbox" href="{{i.Kitchen_Image.url}}">
+						<img src="{{i.Kitchen_Image.url}}"  style="width:100%;max-width:300px">
+
+					  </a>
+					  </div>
+					  </div>
+					  </div>
+					</div>
+					
+				
+				{% endfor %}
+					
+					
+				</div>
+					
+								
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				</div>
+			
+		</div>
+	</div>
+<!-- products -->
+</body>
+</html>
+{% endblock %}
+			
