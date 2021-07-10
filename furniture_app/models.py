@@ -22,7 +22,27 @@ class Contact(models.Model):
     def __str__(self):
         return self.Name
 
-class Images(models.Model):
-    Kitchen_Image=models.ImageField(upload_to='images/',default="")
+class Kitchen_Images(models.Model):
+    Kitchen_Image=models.ImageField(upload_to='images/',default="",blank=True)
+   
+class Wardrobe_Image(models.Model): 
+    Wardrobe_Image=models.ImageField(upload_to='images/',default="",blank=True)
+    
+class Tvcabinet_Image(models.Model):     
+    Tvcabinet_Image=models.ImageField(upload_to='images/',default="",blank=True)
 
+class Pvcdoor_Image(models.Model): 
+    Pvcdoor_Image=models.ImageField(upload_to='images/',default="",blank=True)
+
+class Wallpanelling_Image(models.Model):
+    Wallpanelling_Image=models.ImageField(upload_to='images/',default="",blank=True)
+
+class Designerceiling_Image(models.Model):
+    Designerceiling_Image=models.ImageField(upload_to='images/',default="",blank=True)
+
+class Upvcwindow_Image(models.Model): 
+    Upvcwindow_Image=models.ImageField(upload_to='images/',default="",blank=True)
+
+class Pvcparition_Image(models.Model): 
+    Pvcparition_Image=models.ImageField(upload_to='images/',default="",blank=True)
     

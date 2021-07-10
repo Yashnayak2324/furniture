@@ -22,6 +22,11 @@ urlpatterns = [
     path('pvc_furniture/',views.pvc_furniture,name='pvc_furniture'),
     path('contact/',views.contact,name='contact'),
     path('kitchen_cabiinet/',views.kitchen_cabiinet,name='kitchen_cabiinet'),
-    path('warddrobe/',views.warddrobe,name='warddrobe'),
-
+    path('wardrobe/',views.wardrobe,name='wardrobe'),
+    path('tvcabinet/',views.tvcabinet,name='tvcabinet'),
+    path('pvc_door/',views.pvc_door,name='pvc_door'),
+    path('ceiling/',views.ceiling,name='ceiling'),
+    path('wall_panelling/',views.wall_panelling,name='wall_panelling'),
+    path('upvc_window/',views.upvc_window,name='upvc_window'),
+    path('partition/',views.partition,name='partition'),
 ]

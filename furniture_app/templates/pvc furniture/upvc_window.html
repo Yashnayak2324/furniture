@@ -104,12 +104,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- grow -->
 	<div class="grow">
 		<div class="container"> 
-			<h2>kitchen Cabiinet</h2>
+			<h2>Upvc Window</h2>
 		</div>
 	</div>
 	<div class="content-top">
 		
-	<center><h1 style=" font-style: italic; font-size: 250%;">kitchen Products</h1></center>
+	<center><h1 style=" font-style: italic; font-size: 250%;">Upvc Window Products</h1></center>
 	<!-- grow -->
 	</div>
 	<div class="pro-du">
@@ -230,7 +230,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 				<div class=" pro-tp">
 					<div class="product-at ">
-						<a href="{% url 'single' %}"><img class="img-responsive" src="{% static 'images/kitchen2.jpg' %}" alt="" style="width: 250% ;height: 70%;">
+						<a href="#"><img class="img-responsive" src="{% static 'images/window.jpg' %}" alt="" style="width: 250% ;height: 70%;">
 						<div class="pro-grid">
 									
 						</div>
@@ -274,13 +274,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 			<div class="content-top">
 				
-				<h1>Kitchen Images</h1>
+				<h1>Upvc Window Images</h1>
 				{% for i in img %}
 				<div class="row text-center text-lg-left">
 
 					<div class="col-lg-3 col-md-4 col-6">
 					  <a href="#" class="d-block mb-4 h-100">
-						<img id="myImg" src="{{i.Kitchen_Image.url}}" alt="Snow" style="width:100%;max-width:300px">
+						<img id="myImg" src="{{i.Upvcwindow_Image.url}}" alt="Snow" style="width:100%;max-width:300px">
 
 					  </a>
 					</div>
@@ -302,9 +302,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  var modalImg = document.getElementById("img01");
 					  var captionText = document.getElementById("caption");
 					  img.onclick = function(){
-					  modal.style.display = "block";
-					  modalImg.src = this.src;
-					  captionText.innerHTML = this.alt;
+						modal.style.display = "block";
+						modalImg.src = this.src;
+						captionText.innerHTML = this.alt;
 					  }
 					  
 					  // Get the <span> element that closes the modal

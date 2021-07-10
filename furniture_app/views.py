@@ -268,11 +268,36 @@ def pvc_furniture(request):
     return render(request,"pvc_furniture.html",)
 
 def kitchen_cabiinet(request):
-    img=Images.objects.all()
+    img=Kitchen_Images.objects.all()
     return render(request,"pvc furniture/kitchen_cabiinet.html",{'img':img})
 
-def warddrobe(request):
-    return render(request,"pvc furniture/warddrobe.html")
+def wardrobe(request):
+    img=Wardrobe_Image.objects.all()
+    return render(request,"pvc furniture/wardrobe.html",{'img':img})
+
+def tvcabinet(request):
+    img=Tvcabinet_Image.objects.all()
+    return render(request,'pvc furniture/tvcabinet.html',{'img':img})
+
+def pvc_door(request):
+    img=Pvcdoor_Image.objects.all()
+    return render(request,'pvc furniture/pvc_door.html',{'img':img})
+
+def ceiling(request):
+    img=Designerceiling_Image.objects.all()
+    return render(request,'pvc furniture/ceiling.html',{'img':img})
+
+def wall_panelling(request):
+    img=Wallpanelling_Image.objects.all()
+    return render(request,'pvc furniture/wall_panelling.html',{'img':img})
+
+def upvc_window(request):
+    img=Upvcwindow_Image.objects.all()
+    return render(request,'pvc furniture/upvc_window.html',{'img':img})
+
+def partition(request):
+    img=Pvcparition_Image.objects.all()
+    return render(request,'pvc furniture/partition.html',{'img':img})
 
 def contact(request):
     if request.method=="POST":
